@@ -12,29 +12,31 @@
 
 <script>
 
-    function getCompPick(cPick) {
+    function getCompChoice(cChoice) {
         cPick = Math.floor(Math.random() * 9) + 1;
 
-        console.log(cPick);
+        console.log(cChoice);
 
-        if (cPick % 3 === 0) {
-            cPick = 'rock';
+        if (cChoice % 3 === 0) {
+            cChoice = 'rock';
         }
-        else if (cPick % 2 === 0) {
-            cPick = 'paper';
+        else if (cChoice % 2 === 0) {
+            cChoice = 'paper';
         }
         else {
-            cPick = 'scissors';
+            cChoice = 'scissors';
         }
-        console.log(cPick);
+        console.log(cChoice);
     }
 
-    function getPlayerPick(pPick) {
-        pPick = pPick.toLowerCase();
-        console.log(pPick);
+    function getPlayerChoice(pChoice) {
+        pChoice = pChoice.toLowerCase();
+        console.log(pChoice);
     }
+
+    function comparePicks()
     
-    getCompPick();
+    getCompChoice();
 
 </script>
 
