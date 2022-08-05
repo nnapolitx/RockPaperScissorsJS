@@ -44,6 +44,7 @@
         }
     }
 
+//This is the round function. It needs still needs to add a win or loss for both the player and computer.
     function playRound(player, comp) {
 
         comp = getCompChoice();
@@ -80,12 +81,14 @@
         else {
             console.log('I am error');
         }
-        
-
     }
 
-    playRound();
-
+//This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser
+    function fullGame() {
+        for (let i = 0; i < 5; i++) {
+            
+        } //should loop round function five times
+    }
 
 </script>
 
