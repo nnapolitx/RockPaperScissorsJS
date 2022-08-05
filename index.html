@@ -36,8 +36,28 @@
         return pChoice
     }
 
-    getPlayerChoice();
-    getCompChoice();
+    const player = getPlayerChoice();
+    const comp = getCompChoice();
+
+    function playRound(player, comp) {
+        if (player == comp) console.log(`you both picked ${comp}, it is a tie, please play again.`);
+
+        else if (player === 'rock' && comp === 'scissors') {
+            console.log("You picked rock and the computer chose scissors, you win!");
+        }
+
+        else if (player === 'rock' && comp === 'paper') {
+            console.log("You picked rock and the computer chose paper, you lose!");
+        }
+
+        else {
+            console.log("undefined")
+        }
+
+    }
+
+    playRound();
+
 
 </script>
 
