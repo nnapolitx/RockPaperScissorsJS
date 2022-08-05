@@ -49,33 +49,43 @@
 
         comp = getCompChoice();
         player = getPlayerChoice();
+        let counter;
         
         console.log(player, comp);
 
-        if (player === comp) console.log(`you both picked ${comp}, it is a tie, please play again.`);
+        if (player === comp) {
+            console.log(`you both picked ${comp}, it is a tie, please play again.`);
+            return -1;
+        }
 
         else if (player === 'rock' && comp === 'scissors') {
             console.log("You picked rock and the computer chose scissors, you win!");
+            return 1;
         }
 
         else if (player === 'rock' && comp === 'paper') {
             console.log("You picked rock and the computer chose paper, you lose!");
+            return 2;
         }
 
         else if (player === 'paper' && comp === 'scissors') {
             console.log("You picked paper and the computer chose scissors, you lose!");
+            return 2;
         }
 
         else if (player === 'paper' && comp === 'rock') {
             console.log("You picked paper and the computer chose rock, you win!");
+            return 1;
         }
 
         else if (player === 'scissors' && comp === 'rock') {
             console.log("You picked scissors and the computer chose rock, you lose!");
+            return 2;
         }
 
         else if (player === 'scissors' && comp === 'paper') {
             console.log("You picked scissors and the computer chose paper, you win!");
+            return 1;
         }
 
         else {
@@ -85,10 +95,37 @@
 
 //This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser
     function fullGame() {
+
+        let playerScore = 0;
+        let compScore = 0;
+
         for (let i = 0; i < 5; i++) {
-            
+            playRound();
+            console.log(playRound);
+            if (playRound === -1) {
+                i - 1;
+                console.log(playRound);
+            } // trying to not count a tie
+
+            else if (playRound === 1) {
+                playerScore += 1;
+                console.log(playerScore + ' ' + compScore);
+            }
+
+            else if (playRound === 2) {
+                compScore += 1;
+                console.log(playerScore + ' ' + compScore);
+            }
+
+            else {
+                console.log('an error occured');
+            }
+
         } //should loop round function five times
     }
+
+    fullGame();
+
 
 </script>
 
