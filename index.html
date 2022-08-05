@@ -11,7 +11,27 @@
 </body>
 
 <script>
+
+    function getCompPick(cPick) {
+        cPick = Math.floor(Math.random() * 9) + 1;
+
+        console.log(cPick);
+
+        if (cPick % 3 === 0) {
+            cPick = 'rock';
+        }
+        else if (cPick % 2 === 0) {
+            cPick = 'paper';
+        }
+        else {
+            cPick = 'scissors';
+        }
+        console.log(cPick);
+    }
+
     
+    getCompPick();
+
 </script>
 
 </html>
