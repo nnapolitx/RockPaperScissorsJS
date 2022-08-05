@@ -58,30 +58,45 @@
 
         else if (player === 'rock' && comp === 'scissors') {
             console.log("Rock beats scissors, you win!\n ");
+            counter = 'win';
+            return counter;
         }
 
         else if (player === 'rock' && comp === 'paper') {
             console.log("Paper covers rock, you lose!\n ");
+            counter = 'loss';
+            return counter;
+
         }
 
         else if (player === 'paper' && comp === 'scissors') {
             console.log("Scissors cuts paper, you lose!\n ");
+            counter = 'loss';
+            return counter;
         }
 
         else if (player === 'paper' && comp === 'rock') {
             console.log("Paper covers rock, you win!\n ");
+            counter = 'win';
+            return counter;
         }
 
         else if (player === 'scissors' && comp === 'rock') {
             console.log("Rock beats scissors, you lose!\n ");
+            counter = 'loss';
+            return counter;
         }
 
         else if (player === 'scissors' && comp === 'paper') {
             console.log("Scissors cuts paper, you win!\n ");
+            counter = 'win';
+            return counter;
         }
 
         else {
             console.log('I am error\n ');
+            counter = 'tie';
+            return counter; //plays again just like the tie.
         }
     }
 
@@ -99,27 +114,18 @@
                 i = i - 1;
                 console.log('tie confirmed\n '); //ties no longer count
             }
-           /* console.log(playRound);
-            if (playRound === -1) {
-                i - 1;
-                console.log(playRound);
-            } // trying to not count a tie
 
-            else if (playRound === 1) {
+            else if (counter === 'win') {
                 playerScore += 1;
-                console.log(playerScore + ' ' + compScore);
-            } //trying to count the player's win
+                console.log(`The current score is ${playerScore} to ${compScore}\n`);
+            }
 
-            else if (playRound === 2) {
+            else if (counter === 'loss') {
                 compScore += 1;
-                console.log(playerScore + ' ' + compScore);
-            } //counting the computer's win
-
-            else {
-                console.log('an error occured'); //in case an unexpected value passes here.
-            } */
-
-        } //should loop round function five times
+                console.log(`The current score is ${playerScore} to ${compScore}\n`);
+            }
+          
+        } //should loop round function five times, not including ties or errors.
     }
 
     fullGame();
