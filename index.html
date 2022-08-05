@@ -12,6 +12,7 @@
 
 <script>
 
+//Computer's choice is defined here. Equal chance of picking Rock, paper or Scissors; 1:3.
     function getCompChoice(cChoice) {
         cChoice = Math.floor(Math.random() * 9) + 1;
 
@@ -30,15 +31,18 @@
         return cChoice;
     }
 
+//User's choice is passed here to ensure it is case-insensitive, and the input is a valid answer; i.e. rock, paper or scissors.
     function getPlayerChoice(pChoice) {
         pChoice = prompt('Choose rock, paper or scissors,', '')
         pChoice = pChoice.toLowerCase();
         console.log(pChoice);
-        return pChoice
+        if (pChoice === 'rock' || pChoice === 'paper' || pChoice === 'scissors') {
+            return pChoice;
+        } else {
+            alert('You need to choose rock, paper or scissors. Check your spelling maybe?');
+            getPlayerChoice();
+        }
     }
-
-    
-    
 
     function playRound(player, comp) {
 
