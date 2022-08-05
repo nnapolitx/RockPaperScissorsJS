@@ -48,38 +48,38 @@
         player = getPlayerChoice();
         let counter;
         
-        console.log(player, comp);
+        console.log(`You chose ${player}, and the computer chose ${comp}`);
 
         if (player === comp) {
-            console.log(`you both picked ${comp}, it is a tie, please play again.`);
+            console.log(`you both picked ${comp}, it is a tie, please play again.\n `);
         }
 
         else if (player === 'rock' && comp === 'scissors') {
-            console.log("You picked rock and the computer chose scissors, you win!");
+            console.log("Rock beats scissors, you win!\n ");
         }
 
         else if (player === 'rock' && comp === 'paper') {
-            console.log("You picked rock and the computer chose paper, you lose!");
+            console.log("Paper covers rock, you lose!\n ");
         }
 
         else if (player === 'paper' && comp === 'scissors') {
-            console.log("You picked paper and the computer chose scissors, you lose!");
+            console.log("Scissors cuts paper, you lose!\n ");
         }
 
         else if (player === 'paper' && comp === 'rock') {
-            console.log("You picked paper and the computer chose rock, you win!");
+            console.log("Paper covers rock, you win!\n ");
         }
 
         else if (player === 'scissors' && comp === 'rock') {
-            console.log("You picked scissors and the computer chose rock, you lose!");
+            console.log("Rock beats scissors, you lose!\n ");
         }
 
         else if (player === 'scissors' && comp === 'paper') {
-            console.log("You picked scissors and the computer chose paper, you win!");
+            console.log("Scissors cuts paper, you win!\n ");
         }
 
         else {
-            console.log('I am error');
+            console.log('I am error\n ');
         }
     }
 
