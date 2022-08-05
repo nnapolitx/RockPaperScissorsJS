@@ -40,14 +40,15 @@
             return pChoice;
         } else {
             alert('You need to choose rock, paper or scissors. Check your spelling maybe?');
-            getPlayerChoice();
+            return getPlayerChoice();
         }
     }
 
     function playRound(player, comp) {
 
-        player = getPlayerChoice();
         comp = getCompChoice();
+        player = getPlayerChoice();
+        
         console.log(player, comp);
 
         if (player === comp) console.log(`you both picked ${comp}, it is a tie, please play again.`);
@@ -60,9 +61,26 @@
             console.log("You picked rock and the computer chose paper, you lose!");
         }
 
-        else {
-            console.log("undefined")
+        else if (player === 'paper' && comp === 'scissors') {
+            console.log("You picked paper and the computer chose scissors, you lose!");
         }
+
+        else if (player === 'paper' && comp === 'rock') {
+            console.log("You picked paper and the computer chose rock, you win!");
+        }
+
+        else if (player === 'scissors' && comp === 'rock') {
+            console.log("You picked scissors and the computer chose rock, you lose!");
+        }
+
+        else if (player === 'scissors' && comp === 'paper') {
+            console.log("You picked scissors and the computer chose paper, you win!");
+        }
+
+        else {
+            console.log('I am error');
+        }
+        
 
     }
 
