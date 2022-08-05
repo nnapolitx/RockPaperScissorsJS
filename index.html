@@ -52,6 +52,8 @@
 
         if (player === comp) {
             console.log(`you both picked ${comp}, it is a tie, please play again.\n `);
+            counter = 'tie';
+            return counter;
         }
 
         else if (player === 'rock' && comp === 'scissors') {
@@ -90,7 +92,13 @@
         let compScore = 0;
 
         for (let i = 0; i < 5; i++) {
-            playRound();
+            
+            let counter = playRound();
+
+            if (counter === 'tie') {
+                i = i - 1;
+                console.log('tie confirmed\n '); //ties no longer count
+            }
            /* console.log(playRound);
             if (playRound === -1) {
                 i - 1;
