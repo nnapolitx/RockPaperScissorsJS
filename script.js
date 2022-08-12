@@ -20,6 +20,16 @@ const results = document.querySelector('.results');
 const scoreP = document.querySelector('.scoreP');
 const scoreC = document.querySelector('.scoreC');
 
+//added a reset button.
+const reset = document.querySelector('.resetButton');
+reset.addEventListener('click', () => {
+    scoreC.textContent = '0';
+    scoreP.textContent = '0';
+    playerScore = 0;
+    compScore = 0;
+    results.textContent = 'Choose rock, paper or scissors!';
+    console.log('you hit reset');
+});
 
 let playerChoice;
 let playerScore = 0;
@@ -42,6 +52,8 @@ scissors.addEventListener('click', function(e) {
     playerChoice = 'scissors';
     fullGame();
 });
+
+
 
 //This is the round function.
 function playRound(player, comp) {
