@@ -36,7 +36,7 @@
     }
 
 //User's choice is passed here to ensure it is case-insensitive, and the input is a valid answer; i.e. rock, paper or scissors.
-    function getPlayerChoice(pChoice) {
+    /*function getPlayerChoice(pChoice) {
         pChoice = prompt('Choose rock, paper or scissors,', '')
         pChoice = pChoice.toLowerCase();
         if (pChoice === 'rock' || pChoice === 'paper' || pChoice === 'scissors') {
@@ -45,11 +45,22 @@
             alert('You need to choose rock, paper or scissors. Check your spelling maybe?');
             return getPlayerChoice();
         }
-    }
+    }*/
+
+    let playerChoice = '';
+
+    const rock = document.querySelector('.rock');
+    rock.addEventListener('click', function(e) {
+        console.log("You picked rock");
+        playerChoice = 'rock';
+        console.log(playerChoice);
+        return playerChoice;
+    });
+    
+
 
 //This is the round function. It needs still needs to add a win or loss for both the player and computer.
     function playRound(player, comp) {
-
         comp = getCompChoice();
         player = getPlayerChoice();
         let counter;
@@ -105,12 +116,10 @@
         }
     }
 
-//This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser
-    function fullGame() {
-
+//This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser 
+    /*function fullGame() {
         let playerScore = 0;
         let compScore = 0;
-
         for (let i = 0; i < 5; i++) {
             
             let counter = playRound();
@@ -129,7 +138,6 @@
                 compScore += 1;
                 console.log(`The current score is ${playerScore} to ${compScore}\n`);
             }
-          
         } //should loop round function five times, not including ties or errors.
 
         if (playerScore > compScore) {
@@ -141,7 +149,9 @@
         else {
             alert("Most likely an error has occured");
         }
-    }
+    } */
+
+
 
     //fullGame();
 
