@@ -62,12 +62,28 @@
     let playerScore = 0;
     let compScore = 0;
 
+    if (playerScore > 4 && playerScore > compScore) {
+        alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
+        } 
+    else if (compScore > 4 && compScore > playerScore) {
+        alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+    }
+
+
     const rock = document.querySelector('.rock');
     rock.addEventListener('click', function(e) {
         console.log("You picked rock");
         playerChoice = 'rock';
         console.log(playerChoice);
+        if (playerScore > 4 && playerScore > compScore) {
+            alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
+        } 
+        else if (compScore > 4 && compScore > playerScore) {
+            alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+        }
+        else{
         fullGame();
+        }
     });
     
     const paper = document.querySelector('.paper');
@@ -182,11 +198,25 @@
             else if (counter === 'win') {
                 playerScore += 1;
                 console.log(`The current score is ${playerScore} to ${compScore}\n`);
+                
+                if (playerScore > 4 && playerScore > compScore) {
+                    alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
+                } 
+                else if (compScore > 4 && compScore > playerScore) {
+                    alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+                }
             }
 
             else if (counter === 'loss') {
                 compScore += 1;
                 console.log(`The current score is ${playerScore} to ${compScore}\n`);
+
+                if (playerScore > 4 && playerScore > compScore) {
+                    alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
+                } 
+                else if (compScore > 4 && compScore > playerScore) {
+                    alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+                }
             }
             break;
         }
