@@ -9,15 +9,15 @@
 </head>
 <body>
     <div class = "container">
-        <div class = "results">Display Results Here</div>
+        <div class = "results">Choose rock, paper or scissors!</div>
         <button class="rock">R</button>
         <button class="paper">P</button>
         <button class="scissors">S</button>
     </div>
     
     <div class = "scoreBoard">
-        <div class = "scoreP"></div> -
-        <div class="scoreC"></div>
+        <div class = "scoreP">0</div> -
+        <div class="scoreC">0</div>
     </div>
 </body>
 
@@ -51,6 +51,10 @@
             return getPlayerChoice();
         }
     }*/
+
+    //selecting the div to display the round results
+    const results = document.querySelector('.results');
+
 
     //getting the player choice and calling the playRound() function, but still need to put this in a loop to play full game... possibly, not sure yet
     let playerChoice = '';
@@ -88,59 +92,75 @@
         console.log(`You chose ${player}, and the computer chose ${comp}`);
 
         if (player === comp) {
-            console.log(`you both picked ${comp}, it is a tie, please play again.\n `);
+            console.log(`You both picked ${comp}, it is a tie, please play again.\n `);
+            //changing the textContent of the results div here
+            results.textContent = `You both picked ${comp}, it is a tie, please play again.`;
             counter = 'tie';
             return counter;
         }
 
         else if (player === 'rock' && comp === 'scissors') {
             console.log("Rock beats scissors, you win!\n ");
+            //changing the textContent of the results div here
+            results.textContent = `Rock breaks scissors, you win!`;
             counter = 'win';
             return counter;
         }
 
         else if (player === 'rock' && comp === 'paper') {
             console.log("Paper covers rock, you lose!\n ");
+            //changing the textContent of the results div here
+            results.textContent = `Paper covers rock, you lose!`;
             counter = 'loss';
             return counter;
         }
 
         else if (player === 'paper' && comp === 'scissors') {
-            console.log("Scissors cuts paper, you lose!\n ");
+            console.log("Scissors cut paper, you lose!\n ");
+            //changing the textContent of the results div here
+            results.textContent = 'Scissors cut paper, you lose!'
             counter = 'loss';
             return counter;
         }
 
         else if (player === 'paper' && comp === 'rock') {
             console.log("Paper covers rock, you win!\n ");
+            //changing the textContent of the results div here
+            results.textContent = 'Paper covers rock, you win!';
             counter = 'win';
             return counter;
         }
 
         else if (player === 'scissors' && comp === 'rock') {
             console.log("Rock beats scissors, you lose!\n ");
+            //changing the textContent of the results div here
+            results.textContent ='Rock breaks scissors, you lose!';
             counter = 'loss';
             return counter;
         }
 
         else if (player === 'scissors' && comp === 'paper') {
-            console.log("Scissors cuts paper, you win!\n ");
+            console.log("Scissors cut paper, you win!\n ");
+            //changing the textContent of the results div here
+            results.textContent = 'Scissors cut paper, you win!';
             counter = 'win';
             return counter;
         }
 
         else {
             console.log('I am error\n ');
+            //changing the textContent of the results div here
+            results.textContent = 'There was an error, try again';
             counter = 'tie';
             return counter; //plays again just like the tie.
         }
     }
 
 //This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser 
-    /*function fullGame() {
+    function fullGame() {
         let playerScore = 0;
         let compScore = 0;
-        for (let i = 0; i < 5; i++) {
+         while (playerScore < 5 || compScore < 5) {
             
             let counter = playRound();
 
@@ -169,7 +189,7 @@
         else {
             alert("Most likely an error has occured");
         }
-    } */
+    }
 
 
 

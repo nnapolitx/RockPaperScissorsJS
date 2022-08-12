@@ -21,7 +21,9 @@ body {
     flex-wrap: wrap;
     background-color: white;
     margin-bottom: 2rem;
-    font-size: 6rem;
+    font-size: 4rem;
+    text-align: center;
+    padding: 1rem;
 }
 
 button {
@@ -41,4 +43,5 @@ button + button {
     justify-content: center;
     padding: 2rem;
     font-size: 3rem;
+    gap: 1rem;
 }
