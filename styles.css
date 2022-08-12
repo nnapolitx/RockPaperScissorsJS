@@ -34,3 +34,11 @@ button {
 button + button {
     margin-left: 2rem;
 }
+
+.scoreBoard {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 3rem;
+}
