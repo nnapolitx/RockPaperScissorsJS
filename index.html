@@ -47,7 +47,7 @@
         }
     }*/
 
-    //getting the player choice, but still need to put this in a loop to play full game... possibly, not sure yet
+    //getting the player choice and calling the playRound() function, but still need to put this in a loop to play full game... possibly, not sure yet
     let playerChoice = '';
 
     const rock = document.querySelector('.rock');
@@ -55,7 +55,7 @@
         console.log("You picked rock");
         playerChoice = 'rock';
         console.log(playerChoice);
-        return playerChoice;
+        playRound();
     });
     
     const paper = document.querySelector('.paper');
@@ -63,7 +63,7 @@
         console.log("you picked paper");
         playerChoice = 'paper';
         console.log(playerChoice);
-        return playerChoice;
+        playRound();
     });
 
     const scissors = document.querySelector('.scissors');
@@ -71,7 +71,7 @@
         console.log("You picked scissors");
         playerChoice = 'scissors';
         console.log(playerChoice);
-        return playerChoice;
+        playRound();
     });
 
 //This is the round function.
