@@ -47,6 +47,7 @@
         }
     }*/
 
+    //getting the player choice, but still need to put this in a loop to play full game... possibly, not sure yet
     let playerChoice = '';
 
     const rock = document.querySelector('.rock');
@@ -57,12 +58,26 @@
         return playerChoice;
     });
     
+    const paper = document.querySelector('.paper');
+    paper.addEventListener('click', function(e) {
+        console.log("you picked paper");
+        playerChoice = 'paper';
+        console.log(playerChoice);
+        return playerChoice;
+    });
 
+    const scissors = document.querySelector('.scissors');
+    scissors.addEventListener('click', function(e) {
+        console.log("You picked scissors");
+        playerChoice = 'scissors';
+        console.log(playerChoice);
+        return playerChoice;
+    });
 
-//This is the round function. It needs still needs to add a win or loss for both the player and computer.
+//This is the round function.
     function playRound(player, comp) {
         comp = getCompChoice();
-        player = getPlayerChoice();
+        player = playerChoice;
         let counter;
         
         console.log(`You chose ${player}, and the computer chose ${comp}`);
