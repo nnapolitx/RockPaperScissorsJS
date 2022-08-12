@@ -59,12 +59,15 @@
     //getting the player choice and calling the playRound() function, but still need to put this in a loop to play full game... possibly, not sure yet
     let playerChoice = '';
 
+    let playerScore = 0;
+    let compScore = 0;
+
     const rock = document.querySelector('.rock');
     rock.addEventListener('click', function(e) {
         console.log("You picked rock");
         playerChoice = 'rock';
         console.log(playerChoice);
-        playRound();
+        fullGame();
     });
     
     const paper = document.querySelector('.paper');
@@ -158,14 +161,21 @@
 
 //This function will run the game for five rounds, and should total up the wins and losses in order to declare a winner and loser 
     function fullGame() {
-        let playerScore = 0;
-        let compScore = 0;
-         while (playerScore < 5 || compScore < 5) {
+        
+          //should loop round function five times, not including ties or errors.
+
+        if (playerScore > 4 && playerScore > compScore) {
+            alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
+        } 
+        else if (compScore > 4 && compScore > playerScore) {
+            alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+        }
+        else {
+            while (playerScore < 5 || compScore < 5) {
             
             let counter = playRound();
 
             if (counter === 'tie') {
-                i = i - 1;
                 console.log('tie confirmed\n '); //ties no longer count
             }
 
@@ -178,16 +188,8 @@
                 compScore += 1;
                 console.log(`The current score is ${playerScore} to ${compScore}\n`);
             }
-        } //should loop round function five times, not including ties or errors.
-
-        if (playerScore > compScore) {
-            alert(`YOU'VE WON THIS GAME!\n Your final score is ${playerScore}`);
-        } 
-        else if (compScore > playerScore) {
-            alert(`YOU HAVE LOST!\n Your final score is ${playerScore}`);
+            break;
         }
-        else {
-            alert("Most likely an error has occured");
         }
     }
 
